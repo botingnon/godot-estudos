@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/you_win.png-fcb154dcc3a235bf71cf3da73865261a.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/files/png/gui/you_win.png"
+source_md5="328472af9c0541a8673def6633e40e0f"
+
+dest_files=[ "res://.import/you_win.png-fcb154dcc3a235bf71cf3da73865261a.stex" ]
+dest_md5="e4f6f7a98d0d0d8c006a90a0fb4f585c"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

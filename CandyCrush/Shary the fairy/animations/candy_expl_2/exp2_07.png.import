@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/exp2_07.png-6803e3747351571024a57acabec388cf.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/candy_expl_2/exp2_07.png"
+source_md5="d277c44f07a439441213ab92f0946803"
+
+dest_files=[ "res://.import/exp2_07.png-6803e3747351571024a57acabec388cf.stex" ]
+dest_md5="2c44384c3a95da3eb3337b6d57c57d05"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

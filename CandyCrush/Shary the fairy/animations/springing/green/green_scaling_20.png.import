@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/green_scaling_20.png-9efa0d50a99017d6604032f276899fec.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/springing/green/green_scaling_20.png"
+source_md5="9a0f7860a1a70eaaaff9dcfa225a9048"
+
+dest_files=[ "res://.import/green_scaling_20.png-9efa0d50a99017d6604032f276899fec.stex" ]
+dest_md5="7823b2f37c5098b4b1f49477f36935fb"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://scripts/meteoro.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Meteors/meteorBrown_big1.png" type="Texture" id=2]
+[ext_resource path="res://scenes/meteoros_partes/particles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/meteoros_partes/anim.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/meteoros_partes/sample.tscn" type="PackedScene" id=5]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -32.6899, -39.6307, 21.8298, -39.7561, 48.5256, -0.777679, 34.1124, 31.8088, 9.29652, 28.6755, -49.4844, 10.0009 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -49.4844, 10.0009, 9.29652, 28.6755, -21.5353, 40.3314 )
+
+[node name="meteoro" type="Area2D"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+vida = 3
+pontos = 10
+
+[node name="Sprite" type="Sprite" parent="."]
+
+visibility/opacity = 0.0
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+modulate = Color( 1, 0, 0, 1 )
+
+[node name="poly" type="CollisionPolygon2D" parent="."]
+
+visibility/visible = false
+build_mode = 0
+polygon = Vector2Array( -32.6899, -39.6307, 21.8298, -39.7561, 48.5256, -0.777679, 34.1124, 31.8088, 9.29652, 28.6755, -21.5353, 40.3314, -49.4844, 10.0009 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="particles" parent="." instance=ExtResource( 3 )]
+
+[node name="anim" parent="." instance=ExtResource( 4 )]
+
+[node name="sample" parent="." instance=ExtResource( 5 )]
+
+

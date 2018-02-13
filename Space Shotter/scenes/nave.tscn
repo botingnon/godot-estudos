@@ -1,0 +1,152 @@
+[gd_scene load_steps=17 format=1]
+
+[ext_resource path="res://scripts/nave.gd" type="Script" id=1]
+[ext_resource path="res://sprites/playerShip1_blue.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Parts/gun09.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Parts/gun10.png" type="Texture" id=4]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -40, 21, -45, 24, -49, -4, -44, -4, -42, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -40, 21, -42, 0, -38, 1, -21, 26 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 23, -14, 30, -15, 30, -10, 23, -8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -30, -14, -24, -14, -24, -8, -32, -8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 38, 34, 21, 34, 21, 26, 39, 22 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -21, 26, -22, 36, -39, 35, -40, 21 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 46, -5, 49, -4, 46, 23, 44, 23, 41, 19, 38, 1 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -11, -12, -8, -37, 7, -37, 10, -12, -13, 27 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 21, -5, 23, -8, 30, -10, 38, 1, 41, 19, 39, 22, 21, 26, 14, 27 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 21, -5, 14, 27, 8, 37, -7, 38, -13, 27, 10, -12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -24, -8, -11, -12, -13, 27, -21, 26, -38, 1 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -32, -8, -24, -8, -38, 1, -37, -2 )
+
+[node name="nave" type="Area2D"]
+
+z/z = 1
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/4/trigger = false
+shapes/5/shape = SubResource( 6 )
+shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/5/trigger = false
+shapes/6/shape = SubResource( 7 )
+shapes/6/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/6/trigger = false
+shapes/7/shape = SubResource( 8 )
+shapes/7/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/7/trigger = false
+shapes/8/shape = SubResource( 9 )
+shapes/8/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/8/trigger = false
+shapes/9/shape = SubResource( 10 )
+shapes/9/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/9/trigger = false
+shapes/10/shape = SubResource( 11 )
+shapes/10/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/10/trigger = false
+shapes/11/shape = SubResource( 12 )
+shapes/11/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/11/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+vel = 300
+
+[node name="sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="canhaoE" type="Sprite" parent="."]
+
+transform/pos = Vector2( -30, 10 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="canhaoD" type="Sprite" parent="."]
+
+transform/pos = Vector2( 30, 10 )
+texture = ExtResource( 4 )
+flip_v = true
+
+[node name="posCanhaoE" type="Position2D" parent="."]
+
+transform/pos = Vector2( -27, -24 )
+
+[node name="posCanhaoD" type="Position2D" parent="."]
+
+transform/pos = Vector2( 27, -24 )
+
+[node name="posCanhaoC" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, -48 )
+
+[node name="shape" type="CollisionPolygon2D" parent="."]
+
+build_mode = 0
+polygon = Vector2Array( -45, 24, -49, -4, -44, -4, -42, 0, -38, 1, -37, -2, -32, -8, -30, -14, -24, -14, -24, -8, -11, -12, -8, -37, 7, -37, 10, -12, 21, -5, 23, -8, 23, -14, 30, -15, 30, -10, 38, 1, 46, -5, 49, -4, 46, 23, 44, 23, 41, 19, 39, 22, 38, 34, 21, 34, 21, 26, 14, 27, 8, 37, -7, 38, -13, 27, -21, 26, -22, 36, -39, 35, -40, 21 )
+shape_range = Vector2( 0, 11 )
+trigger = false
+
+[connection signal="area_enter" from="." to="." method="_on_nave_area_enter"]
+
+

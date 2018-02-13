@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scenes/inimigos/spaw_inimigos.tscn" type="PackedScene" id=1]
+
+[node name="fase02" type="Node2D"]
+
+[node name="map" type="Node2D" parent="."]
+
+[node name="spaw_inimigos" parent="." instance=ExtResource( 1 )]
+
+

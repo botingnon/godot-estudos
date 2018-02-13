@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/orange_rays_14.png-490044dc10df89e5c65a6b939dbc757d.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/rays/orange/orange_rays_14.png"
+source_md5="005677843333e7e9303e267fcd256899"
+
+dest_files=[ "res://.import/orange_rays_14.png-490044dc10df89e5c65a6b939dbc757d.stex" ]
+dest_md5="ae791339420099029bb6bce180082fad"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

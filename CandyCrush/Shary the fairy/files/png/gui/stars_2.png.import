@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/stars_2.png-7c36c9e77d5b846ad12226e01a2c2a03.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/files/png/gui/stars_2.png"
+source_md5="e81358014182db10606b1a7422fe1c57"
+
+dest_files=[ "res://.import/stars_2.png-7c36c9e77d5b846ad12226e01a2c2a03.stex" ]
+dest_md5="32ee9b0c1eeace1efd8181449b21ede1"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

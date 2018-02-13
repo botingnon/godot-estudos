@@ -1,0 +1,33 @@
+{
+	"AdMob" : true,
+	"Authentication" : true,
+	"Invites" : false,
+	"RemoteConfig" : false,
+	"Notification" : true,
+	"Storage" : false,
+	"Firestore" : true,
+
+	"AuthConf" : 
+	{
+		"Google" : false,
+		"Twitter" : false,
+		"Facebook" : false,
+		"FacebookAppId" : "",
+        "Anonymous": false,
+        "EmailPassword": true
+	},
+
+	"Ads" : 
+	{
+		"AppId": "ca-app-pub-3940256099942544~3347511713",
+		"BannerAd" : true,
+		"BannerGravity" : "BOTTOM",
+		"BannerAdId" : "ca-app-pub-3940256099942544/6300978111",
+
+		"InterstitialAd" : true,
+		"InterstitialAdId" : "ca-app-pub-3940256099942544/1033173712",
+
+		"RewardedVideoAd" : true,
+		"RewardedVideoAdId" : "ca-app-pub-3940256099942544/5224354917"
+	}
+}

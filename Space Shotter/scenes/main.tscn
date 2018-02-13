@@ -1,0 +1,417 @@
+[gd_scene load_steps=17 format=1]
+
+[ext_resource path="res://fonts/font160.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://sprites/UI/playerLife1_blue.png" type="Texture" id=2]
+[ext_resource path="res://sprites/pixel_branco.jpg" type="Texture" id=3]
+[ext_resource path="res://sprites/Effects/star1.png" type="Texture" id=4]
+[ext_resource path="res://scenes/nave.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/inimigo_spawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/meteor_spawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/power_up_yellow.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/power_up_red.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/inimigos/paths_inimigo.tscn" type="PackedScene" id=10]
+
+[sub_resource type="GDScript" id=1]
+
+resource/name = "label"
+script/source = "extends Label
+
+func _ready():
+	game.connect(\"score_change\", self, \"on_score_change\")
+	
+func on_score_change():
+	set_text(str(game.score))"
+
+[sub_resource type="GDScript" id=2]
+
+resource/name = "vidas"
+script/source = "extends Node2D
+
+export(Texture) var textura
+
+func _ready():
+	game.connect(\"vida_change\", self, \"on_vida_change\")
+
+func on_vida_change():
+	update()
+	
+func _draw():
+	for n in range(0, game.vidas):
+		draw_texture(textura, Vector2(n * (textura.get_width() + 10), 0))"
+
+[sub_resource type="GDScript" id=3]
+
+resource/name = "pauser"
+script/source = "extends CanvasLayer
+
+
+
+func _ready():
+	set_process_input(true)
+	
+func _input(event):
+	if event.is_action_pressed(\"pause\") and !event.echo:
+		get_tree().set_pause(!get_tree().is_paused())
+		
+		if get_tree().is_paused():
+			get_node(\"pausa\").show()
+			get_node(\"preto_branco\").show()
+		else:
+			get_node(\"pausa\").hide()
+			get_node(\"preto_branco\").hide()"
+
+[sub_resource type="CanvasItemShader" id=4]
+
+_code = {
+"fragment": "vec4 pixel_tela = vec4(texscreen(SCREEN_UV), 1);
+float media = (pixel_tela.r + pixel_tela.g + pixel_tela.b) / 3;
+COLOR = vec4(media, media, media, 1);",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+
+[sub_resource type="CanvasItemMaterial" id=5]
+
+shader/shader = SubResource( 4 )
+shader/shading_mode = 0
+
+[sub_resource type="GDScript" id=6]
+
+script/source = "extends Camera2D
+
+var vel = 150
+var shake = 0
+
+func _ready():
+	set_process(true)
+
+func _process(delta):
+	set_offset(get_offset() + Vector2(0, -1) * vel * delta)
+	
+	if shake > 0:
+		set_pos(Vector2(cos(rad2deg(shake)), sin(rad2deg(shake))) * 5)
+		shake -= delta
+	else:
+		set_pos(Vector2(0, 0))
+	
+func shake():
+	shake = .2"
+
+[node name="main" type="CanvasLayer"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+editor/display_folded = true
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="score" type="Label" parent="HUD"]
+
+rect/scale = Vector2( 0.3, 0.3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 351.0
+margin/top = 24.0
+margin/right = 1150.0
+margin/bottom = 197.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = SubResource( 1 )
+
+[node name="vidas" type="Node2D" parent="HUD"]
+
+transform/pos = Vector2( 34.0298, 34.0298 )
+script/script = SubResource( 2 )
+textura = ExtResource( 2 )
+
+[node name="pauser" type="CanvasLayer" parent="."]
+
+process/pause_mode = 2
+editor/display_folded = true
+layer = 10
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+script/script = SubResource( 3 )
+
+[node name="preto_branco" type="TextureFrame" parent="pauser"]
+
+visibility/visible = false
+material/material = SubResource( 5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 640.0
+margin/bottom = 480.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 0
+
+[node name="pausa" type="Label" parent="pauser"]
+
+visibility/visible = false
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 65.0
+margin/top = 195.0
+margin/right = 1072.0
+margin/bottom = 368.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.229904, 0.396414, 0.964844, 1 )
+text = "PAUSADO"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="estrelas" type="ParallaxLayer" parent="ParallaxBackground"]
+
+editor/display_folded = true
+motion/scale = Vector2( 1, 0.8 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 0, 480 )
+
+[node name="estrela1" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 175.418, 124.394 )
+texture = ExtResource( 4 )
+
+[node name="estrela153" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 273.138, 341.732 )
+texture = ExtResource( 4 )
+
+[node name="estrela2" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 44.4931, 210.724 )
+texture = ExtResource( 4 )
+
+[node name="estrela154" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 410.92, 224.986 )
+texture = ExtResource( 4 )
+
+[node name="estrela15" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 565.721, 427.285 )
+texture = ExtResource( 4 )
+
+[node name="estrela8" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 181.68, 270.667 )
+texture = ExtResource( 4 )
+
+[node name="estrela129" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 245.059, 44.6805 )
+texture = ExtResource( 4 )
+
+[node name="estrela128" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 593.242, 85.8964 )
+texture = ExtResource( 4 )
+
+[node name="estrela10" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 66.1217, 413.415 )
+texture = ExtResource( 4 )
+
+[node name="estrela12 4" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 471.503, 407.854 )
+texture = ExtResource( 4 )
+
+[node name="estrela12 11" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 517.85, 297.857 )
+texture = ExtResource( 4 )
+
+[node name="estrela1213" type="Sprite" parent="ParallaxBackground/estrelas"]
+
+transform/pos = Vector2( 430.614, 89.5281 )
+texture = ExtResource( 4 )
+
+[node name="estrelinhas" type="ParallaxLayer" parent="ParallaxBackground"]
+
+editor/display_folded = true
+motion/scale = Vector2( 1, 0.33 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 0, 480 )
+
+[node name="estrelinha" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 37.9635, 21.7823 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha3" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 40.5266, 399.037 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha4" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 129.122, 48.584 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha8 2" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 68.5552, 187.624 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha85 2" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 476.72, 40.6841 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha75" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 560.987, 84.3972 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha76" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 575.068, 306.764 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha5" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 362.434, 97.5639 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha6" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 132.166, 443.803 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha8" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 93.3084, 297.696 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha9" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 336.101, 260.83 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha10" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 501.473, 150.757 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha11" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 515.555, 373.124 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha7" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 238.141, 202.37 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha8 3" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 177.575, 341.41 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha85" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 585.74, 194.47 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="estrelinha86" type="Sprite" parent="ParallaxBackground/estrelinhas"]
+
+transform/pos = Vector2( 599.821, 416.837 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="camera" type="Camera2D" parent="."]
+
+editor/display_folded = true
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+script/script = SubResource( 6 )
+
+[node name="nave" parent="camera" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 330.323, 434.173 )
+
+[node name="inimigo_spawner" parent="." instance=ExtResource( 6 )]
+
+[node name="meteor_spawner" parent="." instance=ExtResource( 7 )]
+
+[node name="power_up_yellow" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 596.694, 438.867 )
+
+[node name="power_up_red" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 43.4173, 444.734 )
+
+[node name="paths_inimigo" parent="." instance=ExtResource( 10 )]
+
+

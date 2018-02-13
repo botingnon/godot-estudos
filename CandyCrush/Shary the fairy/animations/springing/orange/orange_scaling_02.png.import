@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/orange_scaling_02.png-6c55667937d6e6d56d4c875234607d48.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/springing/orange/orange_scaling_02.png"
+source_md5="d5006b70c6dfb3d081a5cd8692ec6ec4"
+
+dest_files=[ "res://.import/orange_scaling_02.png-6c55667937d6e6d56d4c875234607d48.stex" ]
+dest_md5="3ae374aa01128b9b0d892138cd981514"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

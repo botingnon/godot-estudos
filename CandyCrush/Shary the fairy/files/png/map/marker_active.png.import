@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/marker_active.png-07df1b3402668b06c680774902da88ba.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/files/png/map/marker_active.png"
+source_md5="6821b201561a25c25b064b8bdcdeb338"
+
+dest_files=[ "res://.import/marker_active.png-07df1b3402668b06c680774902da88ba.stex" ]
+dest_md5="364e088a266901505b7ba0b6bd09234f"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

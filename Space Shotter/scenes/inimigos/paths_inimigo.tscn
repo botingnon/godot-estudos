@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scripts/paths_inimigo.gd" type="Script" id=1]
+[ext_resource path="res://scenes/inimigos/inimigo01.tscn" type="PackedScene" id=2]
+
+[node name="paths_inimigo" type="Path2D"]
+
+curve = null
+script/script = ExtResource( 1 )
+
+[node name="follow" type="PathFollow2D" parent="."]
+
+transform/pos = Vector2( 3.60995, 3.44124 )
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="inimigo01" parent="follow" instance=ExtResource( 2 )]
+
+

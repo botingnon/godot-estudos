@@ -1,0 +1,634 @@
+[gd_scene load_steps=39 format=1]
+
+[ext_resource path="res://scripts/game.gd" type="Script" id=1]
+[ext_resource path="res://scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://assets/Personagem/p1_walk01.png" type="Texture" id=3]
+[ext_resource path="res://assets/Personagem/p1_walk02.png" type="Texture" id=4]
+[ext_resource path="res://assets/Personagem/p1_walk03.png" type="Texture" id=5]
+[ext_resource path="res://assets/Personagem/p1_walk04.png" type="Texture" id=6]
+[ext_resource path="res://assets/Personagem/p1_walk05.png" type="Texture" id=7]
+[ext_resource path="res://assets/Personagem/p1_walk06.png" type="Texture" id=8]
+[ext_resource path="res://assets/Personagem/p1_walk07.png" type="Texture" id=9]
+[ext_resource path="res://tileset/tileset.tres" type="TileSet" id=10]
+[ext_resource path="res://assets/Tiles/cloud1.png" type="Texture" id=11]
+[ext_resource path="res://scenes/moeda.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/lesma.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/blocoDest.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scripts/platMovel.gd" type="Script" id=15]
+[ext_resource path="res://assets/Tiles/grassCliffLeft.png" type="Texture" id=16]
+[ext_resource path="res://assets/Tiles/grassMid.png" type="Texture" id=17]
+[ext_resource path="res://assets/Tiles/grassCliffRight.png" type="Texture" id=18]
+[ext_resource path="res://assets/Botoes/esquerda0.png" type="Texture" id=19]
+[ext_resource path="res://assets/Botoes/esquerda1.png" type="Texture" id=20]
+[ext_resource path="res://assets/Botoes/direita0.png" type="Texture" id=21]
+[ext_resource path="res://assets/Botoes/direita1.png" type="Texture" id=22]
+[ext_resource path="res://assets/Botoes/cima0.png" type="Texture" id=23]
+[ext_resource path="res://assets/Botoes/cima1.png" type="Texture" id=24]
+[ext_resource path="res://assets/coin48.png" type="Texture" id=25]
+[ext_resource path="res://fonts/font100.fnt" type="BitmapFont" id=26]
+[ext_resource path="res://assets/hud_heartFull.png" type="Texture" id=27]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 28.7341, 43.3262 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 26.0561, 1.29266 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 22.3694, 30.2347 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 18.7813, 7.38 )
+
+[sub_resource type="Curve2D" id=6]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, -0.21875, 3.42297, 0, 0, 0, 0, -187.238, 1.69928 )
+}
+
+[sub_resource type="Curve2D" id=7]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 5.18494, 6.96893, 0, 0, 0, 0, -101.478, 5.92322 )
+}
+
+[sub_resource type="Curve2D" id=8]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 67.0746, -1.79364, 0, 0, 0, 0, 308.169, 90.5156 )
+}
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -34.4062, -31.5998, -32.007, -34.2173, 168.882, -34.2173, 173.463, -30.9455, 174.553, -7.60657, 167.792, 8.53439, 157.976, 18.7861, 133.983, 30.7827, 118.496, 33.6183, 19.9058, 34.0545, -4.95996, 25.9841, -26.772, 12.0243, -35.0607, -5.42535 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.211765, 0.203922, 0.243137, 1 )
+light_color = Color( 0.501961, 0.745098, 0.121569, 1 )
+dark_color = Color( 0.501961, 0.745098, 0.121569, 1 )
+border_size = 10
+border_blend = false
+draw_bg = false
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 420 )
+
+[node name="game" type="Node"]
+
+script/script = ExtResource( 1 )
+
+[node name="spaw_point" type="Position2D" parent="."]
+
+transform/pos = Vector2( 245, 445 )
+
+[node name="spawTimer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = true
+autostart = false
+
+[node name="dead_camera" type="Camera2D" parent="."]
+
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 1, 1 )
+limit/left = 0
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 800
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="personagem" type="KinematicBody2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 254.876, 521.428 )
+z/z = 1
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 2
+collision/margin = 0.01
+script/script = ExtResource( 2 )
+
+[node name="sprite" type="AnimatedSprite" parent="personagem"]
+
+frames = SubResource( 2 )
+animation = "default"
+frame = 6
+playing = true
+
+[node name="Shape" type="CollisionShape2D" parent="personagem"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="rayE" type="RayCast2D" parent="personagem"]
+
+transform/pos = Vector2( -26.6921, 41.9393 )
+enabled = true
+cast_to = Vector2( 0, 5 )
+layer_mask = 2
+type_mask = 15
+
+[node name="rayD" type="RayCast2D" parent="personagem"]
+
+transform/pos = Vector2( 27.3079, 41.9393 )
+enabled = true
+cast_to = Vector2( 0, 5 )
+layer_mask = 2
+type_mask = 15
+
+[node name="Camera2D" type="Camera2D" parent="personagem"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = 0
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 800
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="pes" type="Area2D" parent="personagem"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.584244, 45.7666 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 1024
+collision/mask = 8192
+
+[node name="shape" type="CollisionShape2D" parent="personagem/pes"]
+
+transform/pos = Vector2( 0.584244, 45.7666 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="corpo" type="Area2D" parent="personagem"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 1024
+collision/mask = 8192
+
+[node name="shape" type="CollisionShape2D" parent="personagem/corpo"]
+
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
+[node name="cabeca" type="Area2D" parent="personagem"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -1.17404, -36.3952 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="personagem/cabeca"]
+
+transform/pos = Vector2( -1.17404, -36.3952 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+[node name="tilemap" type="TileMap" parent="."]
+
+transform/pos = Vector2( -211.25, 8.03015 )
+mode = 0
+tile_set = ExtResource( 10 )
+cell/size = Vector2( 70, 70 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 2
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 2, 3, 65538, 3, 131074, 3, 196610, 3, 262146, 3, 327682, 3, 327694, 0, 327695, 0, 327696, 0, 327697, 0, 393218, 3, 393230, 3, 393231, 3, 393232, 3, 393233, 3, 458754, 3, 458757, 7, 458766, 3, 458767, 3, 458768, 3, 458769, 3, 458785, 6, 524290, 3, 524291, 0, 524292, 0, 524293, 0, 524294, 0, 524295, 0, 524296, 0, 524297, 0, 524298, 0, 524299, 0, 524300, 0, 524301, 0, 524302, 3, 524303, 3, 524304, 3, 524305, 3, 524306, 4, 524307, 4, 524308, 4, 524309, 4, 524310, 4, 524311, 4, 524312, 4, 524313, 4, 524314, 0, 524315, 0, 524316, 0, 524317, 0, 524318, 0, 524319, 0, 524320, 0, 524321, 0, 524322, 0, 524323, 0, 524324, 0, 524325, 0, 524326, 0, 524327, 0, 524328, 0, 524329, 0, 524330, 0, 524331, 0, 524332, 0, 524333, 0, 524334, 0, 524335, 0, 524336, 0, 524337, 0, 589826, 3, 589827, 3, 589828, 3, 589829, 3, 589830, 3, 589831, 3, 589832, 3, 589833, 3, 589834, 3, 589835, 3, 589836, 3, 589837, 3, 589838, 3, 589839, 3, 589840, 3, 589841, 3, 589842, 5, 589843, 5, 589844, 5, 589845, 5, 589846, 5, 589847, 5, 589848, 5, 589849, 5, 589850, 3, 589851, 3, 589852, 3, 589853, 3, 589854, 3, 589855, 3, 589856, 3, 589857, 3, 589858, 3, 589859, 3, 589860, 3, 589861, 3, 589862, 3, 589863, 3, 589864, 3, 589865, 3, 589866, 3, 589867, 3, 589868, 3, 589869, 3, 589870, 3, 589871, 3, 589872, 3, 589873, 3, 655362, 3, 655363, 3, 655364, 3, 655365, 3, 655366, 3, 655367, 3, 655368, 3, 655369, 3, 655370, 3, 655371, 3, 655372, 3, 655373, 3, 655374, 3, 655375, 3, 655376, 3, 655377, 3, 655378, 5, 655379, 5, 655380, 5, 655381, 5, 655382, 5, 655383, 5, 655384, 5, 655385, 5, 655386, 3, 655387, 3, 655388, 3, 655389, 3, 655390, 3, 655391, 3, 655392, 3, 655393, 3, 655394, 3, 655395, 3, 655396, 3, 655397, 3, 655398, 3, 655399, 3, 655400, 3, 655401, 3, 655402, 3, 655403, 3, 655404, 3, 655405, 3, 655406, 3, 655407, 3, 655408, 3, 655409, 3, 720898, 3, 720899, 3, 720900, 3, 720901, 3, 720902, 3, 720903, 3, 720904, 3, 720905, 3, 720906, 3, 720907, 3, 720908, 3, 720909, 3, 720910, 3, 720911, 3, 720912, 3, 720913, 3, 720914, 5, 720915, 5, 720916, 5, 720917, 5, 720918, 5, 720919, 5, 720920, 5, 720921, 5, 720922, 3, 720923, 3, 720924, 3, 720925, 3, 720926, 3, 720927, 3, 720928, 3, 720929, 3, 720930, 3, 720931, 3, 720932, 3, 720933, 3, 720934, 3, 720935, 3, 720936, 3, 720937, 3, 720938, 3, 720939, 3, 720940, 3, 720941, 3, 720942, 3, 720943, 3, 720944, 3, 720945, 3, 786434, 3, 786435, 3, 786436, 3, 786437, 3, 786438, 3, 786439, 3, 786440, 3, 786441, 3, 786442, 3, 786443, 3, 786444, 3, 786445, 3, 786446, 3, 786447, 3, 786448, 3, 786449, 3, 786450, 5, 786451, 5, 786452, 5, 786453, 5, 786454, 5, 786455, 5, 786456, 5, 786457, 5, 786458, 3, 786459, 3, 786460, 3, 786461, 3, 786462, 3, 786463, 3, 786464, 3, 786465, 3, 786466, 3, 786467, 3, 786468, 3, 786469, 3, 786470, 3, 786471, 3, 786472, 3, 786473, 3, 786474, 3, 786475, 3, 786476, 3, 786477, 3, 786478, 3, 786479, 3, 786480, 3, 786481, 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Parallax" type="ParallaxBackground" parent="."]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="Layer" type="ParallaxLayer" parent="Parallax"]
+
+transform/pos = Vector2( -6.06406, 87.6194 )
+motion/scale = Vector2( 0.5, 1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="Parallax/Layer"]
+
+transform/pos = Vector2( 192.402, 50.3481 )
+texture = ExtResource( 11 )
+
+[node name="Sprite1" type="Sprite" parent="Parallax/Layer"]
+
+transform/pos = Vector2( 1039.33, 37.7611 )
+texture = ExtResource( 11 )
+
+[node name="Sprite2" type="Sprite" parent="Parallax/Layer"]
+
+transform/pos = Vector2( 864.909, 174.42 )
+texture = ExtResource( 11 )
+
+[node name="Sprite3" type="Sprite" parent="Parallax/Layer"]
+
+transform/pos = Vector2( 683.296, -14.3851 )
+texture = ExtResource( 11 )
+
+[node name="Sprite4" type="Sprite" parent="Parallax/Layer"]
+
+transform/pos = Vector2( 402.785, 129.467 )
+texture = ExtResource( 11 )
+
+[node name="moedas" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="moeda" parent="moedas" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 1435, 385 )
+
+[node name="moeda 2" parent="moedas" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 1925, 315 )
+
+[node name="moeda3" parent="moedas" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 1785, 315 )
+
+[node name="moeda4" parent="moedas" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 1295, 315 )
+
+[node name="moeda5" parent="moedas" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 735, 385 )
+
+[node name="inimigos" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="lesma" parent="inimigos" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 1016.34, 341.442 )
+curve = SubResource( 6 )
+
+[node name="lesma 2" parent="inimigos" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 1995, 546 )
+curve = SubResource( 7 )
+
+[node name="blocos" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="blocoDest1" parent="blocos" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 735, 455 )
+
+[node name="plataformas" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="platMovel" type="Path2D" parent="plataformas"]
+
+transform/pos = Vector2( 1155, 385 )
+curve = SubResource( 8 )
+
+[node name="follow" type="PathFollow2D" parent="plataformas/platMovel"]
+
+transform/pos = Vector2( 67.0746, -1.79364 )
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="body" type="KinematicBody2D" parent="plataformas/platMovel/follow"]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 2.92542, 1.79364 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.01
+script/script = ExtResource( 15 )
+
+[node name="Sprite" type="Sprite" parent="plataformas/platMovel/follow/body"]
+
+texture = ExtResource( 16 )
+
+[node name="Sprite1" type="Sprite" parent="plataformas/platMovel/follow/body"]
+
+transform/pos = Vector2( 70, 0 )
+texture = ExtResource( 17 )
+
+[node name="Sprite2" type="Sprite" parent="plataformas/platMovel/follow/body"]
+
+transform/pos = Vector2( 140, 0 )
+texture = ExtResource( 18 )
+
+[node name="poly" type="CollisionPolygon2D" parent="plataformas/platMovel/follow/body"]
+
+transform/pos = Vector2( 2.92542, 1.79364 )
+build_mode = 0
+polygon = Vector2Array( -34.4062, -31.5998, -32.007, -34.2173, 168.882, -34.2173, 173.463, -30.9455, 174.553, -7.60657, 167.792, 8.53439, 157.976, 18.7861, 133.983, 30.7827, 118.496, 33.6183, 19.9058, 34.0545, -4.95996, 25.9841, -26.772, 12.0243, -35.0607, -5.42535 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="canvasLayer" type="CanvasLayer" parent="."]
+
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="controles" type="Node2D" parent="canvasLayer"]
+
+editor/display_folded = true
+
+[node name="touchLeft" type="TouchScreenButton" parent="canvasLayer/controles"]
+
+transform/pos = Vector2( 35, 583 )
+transform/scale = Vector2( 3.5, 3.5 )
+normal = ExtResource( 19 )
+pressed = ExtResource( 20 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="touchRigth" type="TouchScreenButton" parent="canvasLayer/controles"]
+
+transform/pos = Vector2( 175, 583 )
+transform/scale = Vector2( 3.5, 3.5 )
+normal = ExtResource( 21 )
+pressed = ExtResource( 22 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="touchUp" type="TouchScreenButton" parent="canvasLayer/controles"]
+
+transform/pos = Vector2( 1121, 579 )
+transform/scale = Vector2( 3.5, 3.5 )
+normal = ExtResource( 23 )
+pressed = ExtResource( 24 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="Panel" type="Panel" parent="canvasLayer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1280.0
+margin/bottom = 100.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="moeda" type="Sprite" parent="canvasLayer/Panel"]
+
+transform/pos = Vector2( 54, 50 )
+transform/scale = Vector2( 1.3, 1.3 )
+texture = ExtResource( 25 )
+hframes = 61
+
+[node name="moedas" type="Label" parent="canvasLayer/Panel"]
+
+rect/scale = Vector2( 0.7, 0.7 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 110.0
+margin/top = 2.0
+margin/right = 253.0
+margin/bottom = 175.0
+custom_fonts/font = ExtResource( 26 )
+custom_colors/font_color = Color( 0.772549, 0.560784, 0.360784, 1 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="heart1" type="TextureFrame" parent="canvasLayer/Panel"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1061.0
+margin/top = 25.0
+margin/right = 1114.0
+margin/bottom = 70.0
+texture = ExtResource( 27 )
+stretch_mode = 0
+
+[node name="heart2" type="TextureFrame" parent="canvasLayer/Panel"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1133.0
+margin/top = 25.0
+margin/right = 1186.0
+margin/bottom = 70.0
+texture = ExtResource( 27 )
+stretch_mode = 0
+
+[node name="heart3" type="TextureFrame" parent="canvasLayer/Panel"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1204.0
+margin/top = 25.0
+margin/right = 1257.0
+margin/bottom = 70.0
+texture = ExtResource( 27 )
+stretch_mode = 0
+
+[node name="time" type="Label" parent="canvasLayer/Panel"]
+
+anchor/left = 3
+anchor/right = 3
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 122.0
+margin/top = -3.0
+margin/right = -85.0
+margin/bottom = 104.0
+custom_fonts/font = ExtResource( 26 )
+custom_colors/font_color = Color( 0.776471, 0.572549, 0.384314, 1 )
+text = "30"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Fim" type="Area2D" parent="."]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 10 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 2065, 455 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 0
+
+[node name="shape" type="CollisionShape2D" parent="Fim"]
+
+transform/pos = Vector2( 2065, 455 )
+shape = SubResource( 10 )
+trigger = false
+_update_shape_index = 0
+
+[node name="TimerGame" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="spawTimer" to="." method="_on_spawTimer_timeout"]
+
+[connection signal="fim" from="personagem" to="." method="_on_personagem_fim"]
+
+[connection signal="moeda" from="personagem" to="." method="_on_personagem_moeda"]
+
+[connection signal="morreu" from="personagem" to="." method="_on_personagem_morreu"]
+
+[connection signal="body_enter" from="personagem/pes" to="personagem" method="_on_pes_body_enter"]
+
+[connection signal="body_enter" from="personagem/corpo" to="personagem" method="_on_corpo_body_enter"]
+
+[connection signal="body_enter" from="personagem/cabeca" to="personagem" method="_on_cabeca_body_enter"]
+
+[connection signal="pressed" from="canvasLayer/controles/touchLeft" to="personagem" method="_on_touchLeft_pressed"]
+
+[connection signal="released" from="canvasLayer/controles/touchLeft" to="personagem" method="_on_touchLeft_released"]
+
+[connection signal="pressed" from="canvasLayer/controles/touchRigth" to="personagem" method="_on_touchRigth_pressed"]
+
+[connection signal="released" from="canvasLayer/controles/touchRigth" to="personagem" method="_on_touchRigth_released"]
+
+[connection signal="pressed" from="canvasLayer/controles/touchUp" to="personagem" method="_on_touchUp_pressed"]
+
+[connection signal="released" from="canvasLayer/controles/touchUp" to="personagem" method="_on_touchUp_released"]
+
+[connection signal="body_enter" from="Fim" to="personagem" method="_on_Fim_body_enter"]
+
+[connection signal="timeout" from="TimerGame" to="." method="_on_TimerGame_timeout"]
+
+

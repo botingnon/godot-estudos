@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Paper.png-f3312137d2d075804a8b6e0017c36a32.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/files/png/gui/Paper.png"
+source_md5="c00aaeb9a42c6ea269519d07f10c37e4"
+
+dest_files=[ "res://.import/Paper.png-f3312137d2d075804a8b6e0017c36a32.stex" ]
+dest_md5="b11b89c78b203a54e3cd5c06f562af39"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

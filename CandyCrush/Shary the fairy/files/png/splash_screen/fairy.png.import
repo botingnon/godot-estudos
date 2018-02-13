@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/fairy.png-d8ce4b1d5461377b03cd43d628ee0c30.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/files/png/splash_screen/fairy.png"
+source_md5="a361b9a34d4f324c86a4cfcc7f80dd70"
+
+dest_files=[ "res://.import/fairy.png-d8ce4b1d5461377b03cd43d628ee0c30.stex" ]
+dest_md5="48d629ff23474bdda5a6e9796288ae16"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

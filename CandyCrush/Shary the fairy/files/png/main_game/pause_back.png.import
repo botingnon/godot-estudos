@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/pause_back.png-3d330fbf6f8383f573dd7312d7654dd0.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/files/png/main_game/pause_back.png"
+source_md5="5589eda300e62bdb6c0f7d039a666721"
+
+dest_files=[ "res://.import/pause_back.png-3d330fbf6f8383f573dd7312d7654dd0.stex" ]
+dest_md5="c88b623f6531bd8305bae8be28333116"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

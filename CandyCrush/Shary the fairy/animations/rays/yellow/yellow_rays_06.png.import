@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/yellow_rays_06.png-02bdaa042a4cf87eb5e7b3e259aa4bcc.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/rays/yellow/yellow_rays_06.png"
+source_md5="5289a91a8134b66d7eff7ef339df254e"
+
+dest_files=[ "res://.import/yellow_rays_06.png-02bdaa042a4cf87eb5e7b3e259aa4bcc.stex" ]
+dest_md5="26691806d9dd5146a068f1cd3b081085"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

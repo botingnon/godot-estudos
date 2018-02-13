@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/border.png-e150b6fd879d7811b931a665c4accc8e.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/files/png/main_game/border.png"
+source_md5="bed43b5917c329566574499eb3f7bed7"
+
+dest_files=[ "res://.import/border.png-e150b6fd879d7811b931a665c4accc8e.stex" ]
+dest_md5="61bdae05cb2a2fc8ff98ccca99716e19"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/pink_scaling_22.png-b630f192f4b7be9f7d5343a891d04b31.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/springing/pink/pink_scaling_22.png"
+source_md5="23dfb4487d3b57af169a585095a604c0"
+
+dest_files=[ "res://.import/pink_scaling_22.png-b630f192f4b7be9f7d5343a891d04b31.stex" ]
+dest_md5="c965d8b44de4e862e90930a5f3f290e5"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

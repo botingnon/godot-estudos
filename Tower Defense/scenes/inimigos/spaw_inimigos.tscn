@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scripts/inimigos/spaw_inimigos.gd" type="Script" id=1]
+
+[node name="spaw_inimigos" type="Node"]
+
+script/script = ExtResource( 1 )
+QtdInimigos = 10
+
+[node name="timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
+
+

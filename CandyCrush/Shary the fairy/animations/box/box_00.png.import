@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/box_00.png-fa4265be1bf6eff133237b1efb7feb79.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/box/box_00.png"
+source_md5="e01f34592f75dcaf08b17ed6e0127f2f"
+
+dest_files=[ "res://.import/box_00.png-fa4265be1bf6eff133237b1efb7feb79.stex" ]
+dest_md5="d32672bfba532f685fa95bdeb44930ec"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

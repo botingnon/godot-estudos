@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/purple_scaling_03.png-c78aad53ac350f985467ab7325dd1e7c.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/springing/purple/purple_scaling_03.png"
+source_md5="a176faf11b796b9ba791d786a501c821"
+
+dest_files=[ "res://.import/purple_scaling_03.png-c78aad53ac350f985467ab7325dd1e7c.stex" ]
+dest_md5="b987c8e728057407f02165b1f9e30022"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

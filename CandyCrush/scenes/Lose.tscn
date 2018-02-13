@@ -1,0 +1,270 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://scripts/Lose.gd" type="Script" id=1]
+[ext_resource path="res://Shary the fairy/files/png/gui/plashka.png" type="Texture" id=2]
+[ext_resource path="res://Shary the fairy/files/png/gui/circle_green.png" type="Texture" id=3]
+[ext_resource path="res://Shary the fairy/files/png/gui/Group_12.png" type="Texture" id=4]
+[ext_resource path="res://Shary the fairy/files/png/gui/r1.png" type="Texture" id=5]
+[ext_resource path="res://Shary the fairy/files/png/gui/replay.png" type="Texture" id=6]
+[ext_resource path="res://Shary the fairy/files/png/gui/x.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "Hide"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("HomeButton:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 49.4149, 469.78 ), Vector2( 49.4149, 1309.46 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HomeButton:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ReplayButton:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 294.018, 688.44 ), Vector2( 294.018, 1528.12 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ReplayButton:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:transform/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 76.8396, 506.071 ), Vector2( 76.8396, 1345.75 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite:transform/rot")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite 2:transform/pos")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 392.848, 611.873 ), Vector2( 392.848, 1451.55 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite 2:transform/rot")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "Show"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("HomeButton:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 49.4149, -369.9 ), Vector2( 49.4149, 461.362 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HomeButton:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ReplayButton:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 294.018, -151.239 ), Vector2( 294.018, 680.022 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ReplayButton:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:transform/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 76.8396, -333.609 ), Vector2( 76.8396, 497.653 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite:transform/rot")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite 2:transform/pos")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 392.848, -227.806 ), Vector2( 392.848, 603.455 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite 2:transform/rot")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
+[node name="Lose" type="Node2D"]
+
+process/pause_mode = 2
+script/script = ExtResource( 1 )
+
+[node name="ColorFrame" type="ColorFrame" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 800.0
+margin/bottom = 1280.0
+color = Color( 1, 1, 1, 0.466667 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 76.8396, -333.609 )
+transform/scale = Vector2( 0.5, 0.158963 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="HomeButton" type="TouchScreenButton" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 49.4149, -369.9 )
+transform/scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="Sprite" type="Sprite" parent="HomeButton"]
+
+transform/pos = Vector2( 109.948, 101.3 )
+texture = ExtResource( 4 )
+
+[node name="ReplayButton" type="TouchScreenButton" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 294.018, -151.239 )
+transform/scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 5 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="Sprite" type="Sprite" parent="ReplayButton"]
+
+transform/pos = Vector2( 191.483, 91.4175 )
+texture = ExtResource( 6 )
+
+[node name="Sprite 2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 392.848, -227.806 )
+texture = ExtResource( 7 )
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/Hide = SubResource( 1 )
+anims/Show = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "Show"
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]
+
+[connection signal="pressed" from="ReplayButton" to="." method="_on_ReplayButton_pressed"]
+
+

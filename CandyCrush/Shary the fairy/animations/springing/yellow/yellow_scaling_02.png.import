@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/yellow_scaling_02.png-38af5ffef45a49ae315ca8b3679a4c18.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/springing/yellow/yellow_scaling_02.png"
+source_md5="69ac742377a6feff3123382ce0bcfc9b"
+
+dest_files=[ "res://.import/yellow_scaling_02.png-38af5ffef45a49ae315ca8b3679a4c18.stex" ]
+dest_md5="a14d9e0aa4b83f642125097b7a448151"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

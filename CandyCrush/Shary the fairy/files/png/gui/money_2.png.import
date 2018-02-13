@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/money_2.png-5ea6da320e2e852917265fb9348aefdb.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/files/png/gui/money_2.png"
+source_md5="3cac6bec75b23878391e990d2cfd45b8"
+
+dest_files=[ "res://.import/money_2.png-5ea6da320e2e852917265fb9348aefdb.stex" ]
+dest_md5="dea3abd6bfa197516b80a637e92bbe77"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

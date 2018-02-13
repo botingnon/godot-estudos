@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=1]
+
+[ext_resource path="res://scenes/fases/fase01.tscn" type="PackedScene" id=1]
+[ext_resource path="res://samples/1.wav" type="Sample" id=2]
+[ext_resource path="res://samples/2.wav" type="Sample" id=3]
+[ext_resource path="res://samples/3.wav" type="Sample" id=4]
+[ext_resource path="res://samples/mission_completed.wav" type="Sample" id=5]
+[ext_resource path="res://samples/ready.wav" type="Sample" id=6]
+[ext_resource path="res://samples/round.wav" type="Sample" id=7]
+[ext_resource path="res://samples/war_go_go_go.wav" type="Sample" id=8]
+
+[sub_resource type="GDScript" id=1]
+
+resource/name = "main"
+script/source = "extends Node
+
+var m = 1
+
+func _ready():
+	get_node(\"sample\").play(\"round\")
+	
+
+func _on_Timer_timeout():
+	if m == 1:
+		get_node(\"sample\").play(\"1\")
+
+	elif m == 2:
+		get_node(\"sample\").play(\"war_go_go_go\")
+		get_node(\"Timer\").stop()
+		
+	m += 1
+"
+
+[sub_resource type="SampleLibrary" id=2]
+
+samples/1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/3 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/mission_completed = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/ready = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+samples/round = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 7 )
+}
+samples/war_go_go_go = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 8 )
+}
+
+[node name="main" type="Node"]
+
+script/script = SubResource( 1 )
+
+[node name="fase01" parent="." instance=ExtResource( 1 )]
+
+editor/display_folded = true
+
+[node name="sample" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = SubResource( 2 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+
+[editable path="fase01"]

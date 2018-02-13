@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/blick_21.png-16bd8e447ff2297c6a9614acbbb4ddfc.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/flare/blick_21.png"
+source_md5="a29fa4c641d1d273aa7e75b262b167c0"
+
+dest_files=[ "res://.import/blick_21.png-16bd8e447ff2297c6a9614acbbb4ddfc.stex" ]
+dest_md5="ecf9ca272aa497a1da081ec886fb7a89"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

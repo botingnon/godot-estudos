@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://scripts/inimigos/soldado.gd" type="Script" id=1]
+[ext_resource path="res://assets/tiles/towerDefense_tile245.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "andar"
+length = 0.8
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("corpo:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -5.0, 0.0, 5.0 ]
+}
+
+[node name="soldado" type="PathFollow2D"]
+
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+script/script = ExtResource( 1 )
+Velocidade = 150
+Vida = 150
+
+[node name="corpo" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/andar = SubResource( 1 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+

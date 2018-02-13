@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/purple_rays_00.png-1415089d2775e3e5d4304720b34ed86e.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/rays/purple/purple_rays_00.png"
+source_md5="42006e8c324bd89443766d31e21cff6d"
+
+dest_files=[ "res://.import/purple_rays_00.png-1415089d2775e3e5d4304720b34ed86e.stex" ]
+dest_md5="48673c3f10e9982ecdb546d90c0fbe6e"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

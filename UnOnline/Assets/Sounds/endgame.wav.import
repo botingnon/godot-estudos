@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/endgame.wav-ddb1155ae108b1c154191f6b66e2a755.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/endgame.wav"
+source_md5="817b3d8468667e4c37e97917323759e3"
+
+dest_files=[ "res://.import/endgame.wav-ddb1155ae108b1c154191f6b66e2a755.sample" ]
+dest_md5="449bdb2f79cf19d00caa460153d49127"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

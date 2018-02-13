@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/blue_rays_02.png-9048fc20bc40f2d3bab569d90c94fe26.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/rays/blue/blue_rays_02.png"
+source_md5="06623ab3dfbf44d28a25c2f08afaf294"
+
+dest_files=[ "res://.import/blue_rays_02.png-9048fc20bc40f2d3bab569d90c94fe26.stex" ]
+dest_md5="dfd83046f8ab376a194fa759e73d302f"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

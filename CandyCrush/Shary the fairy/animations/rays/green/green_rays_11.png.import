@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/green_rays_11.png-a0f2dbd80f6a3d091db98e222fe51382.stex"
+
+[deps]
+
+source_file="res://Shary the fairy/animations/rays/green/green_rays_11.png"
+source_md5="a87c6fd04009c8a06c0bef6ea5716a1c"
+
+dest_files=[ "res://.import/green_rays_11.png-a0f2dbd80f6a3d091db98e222fe51382.stex" ]
+dest_md5="cf019218fe32960544684454afe0040f"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
